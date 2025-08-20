@@ -1,17 +1,33 @@
+import Image from 'next/image'
+
 export default function Footer() {
   return (
     <footer className="footer">
       <p className="maintenance">🚧 Website Under Maintenance 🚧</p>
-
       <p className="contact">Contact Us</p>
 
       <div className="qr-section">
         <div className="qr-item">
-          <img src="/whatsapp-qr.png" alt="WhatsApp QR" />
+          <Image
+            src="/whatsapp-qr.png"
+            alt="WhatsApp QR"
+            width={300}
+            height={300}
+            className="qr-img"
+            priority
+          />
           <p>WhatsApp</p>
         </div>
+
         <div className="qr-item">
-          <img src="/instagram-qr.png" alt="Instagram QR" />
+          <Image
+            src="/instagram-qr.png"
+            alt="Instagram QR"
+            width={300}
+            height={300}
+            className="qr-img"
+            priority
+          />
           <p>Instagram</p>
         </div>
       </div>
@@ -21,62 +37,59 @@ export default function Footer() {
           width: 100%;
           padding: 20px;
           text-align: center;
-          background-color: #f9f9f9;
+          background: #f9f9f9;
           border-top: 1px solid #eaeaea;
         }
 
         .maintenance {
-          font-size: 18px;
-          font-weight: bold;
+          font-weight: 700;
           color: #e63946;
-          margin-bottom: 10px;
+          margin: 0 0 8px;
+          font-size: clamp(18px, 5vw, 28px);
         }
 
         .contact {
-          font-size: 16px;
+          margin: 0 0 12px;
           font-weight: 600;
-          margin: 10px 0;
+          font-size: clamp(16px, 4vw, 22px);
         }
 
         .qr-section {
-          display: flex;
-          justify-content: center;
-          gap: 20px;
-          margin-top: 10px;
-          flex-wrap: wrap;
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 16px;
+          justify-items: center;
+        }
+
+        /* 2 columns on tablets/desktop */
+        @media (min-width: 640px) {
+          .qr-section {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+          }
         }
 
         .qr-item {
           display: flex;
           flex-direction: column;
           align-items: center;
+          max-width: 90vw; /* never overflow screen */
         }
 
-        .qr-item img {
-          width: 120px;
-          height: 120px;
-          border-radius: 8px;
-          border: 1px solid #ccc;
-          transition: transform 0.2s ease-in-out;
-        }
-
-        .qr-item img:hover {
-          transform: scale(1.05);
+        /* Make images scale nicely on small screens */
+        :global(img.qr-img) {
+          width: clamp(140px, 45vw, 220px);
+          height: auto;
+          border-radius: 10px;
+          border: 1px solid #ddd;
         }
 
         .qr-item p {
           margin-top: 8px;
-          font-size: 14px;
+          font-size: clamp(12px, 3.5vw, 16px);
           font-weight: 500;
-        }
-
-        @media (max-width: 600px) {
-          .qr-item img {
-            width: 100px;
-            height: 100px;
-          }
         }
       `}</style>
     </footer>
-  );
+  )
 }

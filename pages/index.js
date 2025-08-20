@@ -13,7 +13,6 @@ export default function Home() {
 
       <main>
         <Header title="Welcome to Tehreer Creations" />
-        //<p className="description">Tehreer Creations</p>
       </main>
 
       <Footer />

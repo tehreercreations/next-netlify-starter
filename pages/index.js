@@ -150,7 +150,7 @@ export default function Home() {
           <span>TEHREER</span> <span className="light">CREATIONS</span>
         </h1>
         <p className="tag">CREATIVITY | DESIGNING | PRINTING | ADVERTISING</p>
-        //<p className="site">www.tehreercreations.com</p>
+      
       </main>
 
       <style jsx>{`

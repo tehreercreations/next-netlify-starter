@@ -6,8 +6,10 @@ export default function Home() {
       <Head>
         <title>Tehreer Creations</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="Creativity | Designing | Printing | Advertising" />
+        {/* Nice status bar color on mobile */}
+        <meta name="theme-color" content="#ffffff" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       {/* Top */}
@@ -33,7 +35,7 @@ export default function Home() {
               </svg>
             </a>
 
-            {/* Instagram (circular gradient so shape matches) */}
+            {/* Instagram */}
             <a href="https://instagram.com/tehreercreations" target="_blank" rel="noopener" aria-label="Instagram" className="icon">
               <svg viewBox="0 0 40 40" width="40" height="40" role="img">
                 <defs>
@@ -45,7 +47,6 @@ export default function Home() {
                   </linearGradient>
                 </defs>
                 <circle cx="20" cy="20" r="20" fill="url(#igCircle)" />
-                {/* inner camera, sized & centered consistently */}
                 <g transform="translate(20 20) scale(0.72) translate(-12 -12)">
                   <rect x="2.5" y="2.5" width="19" height="19" rx="5" fill="none" stroke="#fff" strokeWidth="2.5" />
                   <circle cx="12" cy="12" r="5" fill="none" stroke="#fff" strokeWidth="2.5" />
@@ -64,7 +65,7 @@ export default function Home() {
               </svg>
             </a>
 
-            {/* Phone (consistent circle + padding) */}
+            {/* Phone */}
             <a href="tel:7780829966" aria-label="Phone" className="icon">
               <svg viewBox="0 0 40 40" width="40" height="40" role="img">
                 <circle cx="20" cy="20" r="20" fill="#007AFF" />
@@ -81,6 +82,7 @@ export default function Home() {
       <main className="hero">
         <h1><span>TEHREER</span> <span className="light">CREATIONS</span></h1>
         <p className="tag">CREATIVITY | DESIGNING | PRINTING | ADVERTISING</p>
+        <p className="site">www.tehreercreations.com</p>
       </main>
 
       <style jsx>{`
@@ -98,25 +100,34 @@ export default function Home() {
         .row { display: flex; align-items: center; gap: 10px; font-size: 18px; }
         .logo img { height: 180px; width: auto; display: block; }
 
-        /* icon grid: uniform size, spacing */
+        /* Icon grid */
         .icon-grid {
-          display: grid; grid-template-columns: repeat(2, 40px); grid-auto-rows: 40px;
+          display: grid; grid-template-columns: repeat(2, 44px); grid-auto-rows: 44px;
           gap: 14px; justify-items: center; align-items: center;
         }
         .icon { line-height: 0; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.12)); }
         .icon svg { border-radius: 50%; transition: transform .2s ease, filter .2s ease; }
-        .icon:hover svg { transform: scale(1.08); filter: drop-shadow(0 6px 14px rgba(0,0,0,0.18)); }
+        .icon:active svg, .icon:hover svg { transform: scale(1.08); filter: drop-shadow(0 6px 14px rgba(0,0,0,0.18)); }
 
         .hero { text-align: center; margin-top: 28px; }
-        .hero h1 { margin: 0; letter-spacing: 0.04em; font-size: clamp(36px, 8vw, 92px); font-weight: 800; }
+        .hero h1 { margin: 0; letter-spacing: 0.04em; font-size: clamp(34px, 8vw, 92px); font-weight: 800; }
         .hero h1 .light { font-weight: 400; }
-        .tag { margin-top: 12px; font-size: clamp(14px, 2.6vw, 28px); letter-spacing: 0.25em; }
-        .site { margin-top: 16px; font-size: clamp(16px, 2.4vw, 24px); font-weight: 500; }
+        .tag { margin-top: 12px; font-size: clamp(13px, 2.8vw, 28px); letter-spacing: 0.18em; }
+        .site { margin-top: 14px; font-size: clamp(15px, 2.6vw, 24px); font-weight: 500; }
 
-        @media (max-width: 900px) {
-          .top { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+        /* Mobile tweaks */
+        @media (max-width: 768px) {
+          .top { grid-template-columns: 1fr; text-align: center; justify-items: center; gap: 16px; }
           .right { justify-items: center; }
           .logo img { height: 140px; }
+          .row { font-size: 16px; }
+          .icon-grid { grid-template-columns: repeat(2, 48px); grid-auto-rows: 48px; gap: 16px; }
+        }
+        @media (max-width: 480px) {
+          .logo img { height: 110px; }
+          .row { font-size: 15px; }
+          .icon-grid { grid-template-columns: repeat(2, 52px); grid-auto-rows: 52px; gap: 16px; }
+          .tag { letter-spacing: 0.14em; }
         }
       `}</style>
     </div>

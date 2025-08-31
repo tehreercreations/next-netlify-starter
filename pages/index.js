@@ -122,7 +122,7 @@ export default function Home() {
             >
               <IconInstagram />
             </a>
-            <span className="handle">@tehreercreations</span>
+            <span className="handle"></span>
           </div>
 
           <div className="row contact">
@@ -139,7 +139,7 @@ export default function Home() {
             <a className="icon" href="tel:7780829966" aria-label="Phone" title="Phone">
               <IconPhone />
             </a>
-            <span className="phone">7780829966</span>
+            <span className="phone"></span>
           </div>
         </div>
       </header>
@@ -150,7 +150,7 @@ export default function Home() {
           <span>TEHREER</span> <span className="light">CREATIONS</span>
         </h1>
         <p className="tag">CREATIVITY | DESIGNING | PRINTING | ADVERTISING</p>
-        <p className="site">www.tehreercreations.com</p>
+        //<p className="site">www.tehreercreations.com</p>
       </main>
 
       <style jsx>{`

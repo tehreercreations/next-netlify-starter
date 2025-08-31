@@ -125,7 +125,7 @@ export default function Home() {
         <p className="tag">
           CREATIVITY | DESIGNING | PRINTING | ADVERTISING
         </p>
-        <p className="site">www.tehreercreations.com</p>
+      
       </main>
 
       <style jsx>{`

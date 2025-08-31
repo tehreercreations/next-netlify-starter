@@ -6,250 +6,117 @@ export default function Home() {
       <Head>
         <title>Tehreer Creations</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta
-          name="description"
-          content="Creativity | Designing | Printing | Advertising"
-        />
         <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Creativity | Designing | Printing | Advertising" />
       </Head>
 
-      {/* Top Section */}
+      {/* Top */}
       <header className="top">
-        {/* Left Contact */}
         <div className="left">
-          <div className="row">
-            <span className="ico">📧</span>
-            <span>tehreercreations@gmail.com</span>
-          </div>
-          <div className="row">
-            <span className="ico">📍</span>
-            <span>Chinar Chowk, Shalimar, Srinagar</span>
-          </div>
+          <div className="row"><span className="ico">📧</span> tehreercreations@gmail.com</div>
+          <div className="row"><span className="ico">📍</span> Chinar Chowk, Shalimar, Srinagar</div>
         </div>
 
-        {/* Center Logo */}
+        {/* Center logo */}
         <div className="logo">
           <img src="/tc-logo.png" alt="Tehreer Creations logo" />
         </div>
 
-        {/* Right Section */}
+        {/* Right: social + contact */}
         <div className="right">
-          {/* Social Media Icons */}
-          <div className="row socials">
+          <div className="icon-grid">
             {/* Facebook */}
-            <a
-              href="https://facebook.com/tehreercreations"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-            >
-              <svg width="36" height="36" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="12" fill="#1877F2" />
-                <path
-                  fill="#fff"
-                  d="M13.5 8.5h1.6V6.1c-.28-.04-.99-.1-1.88-.1c-1.86 0-3.14 1.17-3.14 3.33V11H8v2.2h2.08V18h2.43v-4.8h2l.35-2.2h-2.35v-1.4c0-.63.21-1.1 1-1.1Z"
-                />
+            <a href="https://facebook.com/tehreercreations" target="_blank" rel="noopener" aria-label="Facebook" className="icon">
+              <svg viewBox="0 0 40 40" width="40" height="40" role="img">
+                <circle cx="20" cy="20" r="20" fill="#1877F2" />
+                <path fill="#fff" d="M23.6 13.2h-2.1c-1.1 0-1.3.5-1.3 1.3v1.9h3.4l-.4 3.2h-3v8.2h-3.4v-8.2H14v-3.2h2.8v-2.2c0-2.5 1.5-4 3.9-4c1 0 2 .1 2.9.2v3.1z" />
               </svg>
             </a>
 
-            {/* Instagram */}
-            <a
-              href="https://instagram.com/tehreercreations"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
-              <svg width="36" height="36" viewBox="0 0 24 24">
+            {/* Instagram (circular gradient so shape matches) */}
+            <a href="https://instagram.com/tehreercreations" target="_blank" rel="noopener" aria-label="Instagram" className="icon">
+              <svg viewBox="0 0 40 40" width="40" height="40" role="img">
                 <defs>
-                  <linearGradient id="ig" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <linearGradient id="igCircle" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="#F58529" />
-                    <stop offset="30%" stopColor="#FEDA77" />
-                    <stop offset="60%" stopColor="#DD2A7B" />
+                    <stop offset="35%" stopColor="#FEDA77" />
+                    <stop offset="65%" stopColor="#DD2A7B" />
                     <stop offset="100%" stopColor="#8134AF" />
                   </linearGradient>
                 </defs>
-                <rect
-                  x="2"
-                  y="2"
-                  width="20"
-                  height="20"
-                  rx="5"
-                  fill="url(#ig)"
-                />
-                <circle cx="12" cy="12" r="4" fill="#fff" />
-                <circle cx="18" cy="6.5" r="1.2" fill="#fff" />
-                <circle cx="12" cy="12" r="2.3" fill="url(#ig)" />
+                <circle cx="20" cy="20" r="20" fill="url(#igCircle)" />
+                {/* inner camera, sized & centered consistently */}
+                <g transform="translate(20 20) scale(0.72) translate(-12 -12)">
+                  <rect x="2.5" y="2.5" width="19" height="19" rx="5" fill="none" stroke="#fff" strokeWidth="2.5" />
+                  <circle cx="12" cy="12" r="5" fill="none" stroke="#fff" strokeWidth="2.5" />
+                  <circle cx="18.2" cy="5.8" r="1.6" fill="#fff" />
+                </g>
               </svg>
             </a>
-          </div>
 
-          {/* WhatsApp & Phone */}
-          <div className="row contact">
             {/* WhatsApp */}
-            <a
-              href="https://wa.me/7780829966"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="WhatsApp"
-            >
-              <svg width="36" height="36" viewBox="0 0 32 32">
-                <circle cx="16" cy="16" r="16" fill="#25D366" />
-                <path
-                  fill="#fff"
-                  d="M21.8 19.2c-.2-.1-1.2-.6-1.4-.7c-.3-.1-.5-.1-.7.2l-.9 1c-.2.2-.4.2-.7.1c-1.5-.6-2.7-1.7-3.5-3.1c-.2-.3-.2-.5 0-.7l.8-.9c.2-.2.3-.4.2-.6c-.1-.3-.5-1.4-.7-1.9c-.2-.5-.5-.4-.7-.4h-.6c-.3 0-.7.1-1 .4c-.4.5-1.1 1.1-1.1 2.7c0 1.6 1.2 3.3 1.4 3.6c.2.3 2.3 3.6 5.6 4.9c2.1.8 2.9.7 3.5.6c.8-.1 1.7-.8 1.9-1.5c.1-.5.1-1 .1-1.1c0-.3-.2-.4-.4-.5Z"
-                />
+            <a href="https://wa.me/7780829966" target="_blank" rel="noopener" aria-label="WhatsApp" className="icon">
+              <svg viewBox="0 0 40 40" width="40" height="40" role="img">
+                <circle cx="20" cy="20" r="20" fill="#25D366" />
+                <g transform="translate(20 20) scale(0.85) translate(-12 -12)">
+                  <path fill="#fff" d="M19.6 12c0-4.2-3.4-7.6-7.6-7.6S4.4 7.8 4.4 12c0 1.3.3 2.5.9 3.5L4 20l4.7-1.2c1 .5 2.1.8 3.3.8c4.2 0 7.6-3.4 7.6-7.6zM8.9 9c.2-.5.3-.6.6-.6h.5c.2 0 .5 0 .7.5c.2.5.8 1.9.8 2s.1.4 0 .6c0 .2-.1.3-.3.5c-.1.1-.3.3-.4.4c-.1.1-.2.2-.1.4c.2.4.7 1.2 1.6 1.9c1 .7 1.7.9 2.1 1c.2.1.3 0 .4-.2l.6-.7c.1-.2.3-.2.5-.1c.2.1 1.5.7 1.7.8c.2.1.3.1.4.2c0 .1.1.8-.3 1.5c-.4.7-1.2 1-1.7 1c-.4 0-.9 0-1.9-.4c-.9-.3-2-.9-3.3-1.9s-2.3-2.4-2.7-3.2c-.3-.8-.3-1.4-.3-1.6c0-.2.1-.4.2-.5c.2-.2.6-.6.8-.8c.1-.1.1-.2.1-.3c0-.1 0-.2-.1-.3c0-.1-.5-1.3-.7-1.7c-.1-.4-.3-.4-.5-.4h-.5c-.2 0-.4.1-.6.4c-.2.3-.8.8-.8 1.9c0 1 .7 2.1.8 2.2z"/>
+                </g>
               </svg>
             </a>
 
-            {/* Phone */}
-            <a href="tel:7780829966" aria-label="Phone">
-              <svg width="36" height="36" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="12" fill="#007AFF" />
-                <path
-                  fill="#fff"
-                  d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.3c1.1.4 2.3.6 3.6.6c.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C9.8 21 3 14.2 3 6c0-.6.4-1 1-1h2.5c.6 0 1 .4 1 1c0 1.2.2 2.5.6 3.6c.1.3 0 .7-.3 1l-2.2 2.2Z"
-                />
+            {/* Phone (consistent circle + padding) */}
+            <a href="tel:7780829966" aria-label="Phone" className="icon">
+              <svg viewBox="0 0 40 40" width="40" height="40" role="img">
+                <circle cx="20" cy="20" r="20" fill="#007AFF" />
+                <g transform="translate(20 20) scale(0.8) translate(-12 -12)">
+                  <path fill="#fff" d="M7.8 9.2c.2-.3.3-.7.2-1C7.6 7 7.4 5.8 7.4 4.6c0-.4-.3-.6-.6-.6H4.6c-.4 0-.6.3-.6.6C4 14.5 13.5 24 23.4 24c.4 0 .6-.3.6-.6v-2.2c0-.3-.2-.6-.6-.6c-1.2 0-2.4-.2-3.6-.6c-.3-.1-.7 0-1 .2l-1.9 1.9c-4.5-1.9-8-5.4-9.9-9.9l1.9-1.9z"/>
+                </g>
               </svg>
             </a>
-
-            <span className="phone"></span>
           </div>
         </div>
       </header>
 
-      {/* Hero Section */}
+      {/* Hero */}
       <main className="hero">
-        <h1>
-          <span>TEHREER</span> <span className="light">CREATIONS</span>
-        </h1>
-        <p className="tag">
-          CREATIVITY | DESIGNING | PRINTING | ADVERTISING
-        </p>
-      
+        <h1><span>TEHREER</span> <span className="light">CREATIONS</span></h1>
+        <p className="tag">CREATIVITY | DESIGNING | PRINTING | ADVERTISING</p>
       </main>
 
       <style jsx>{`
-        :root {
-          --text: #0a0a0a;
-        }
+        :root { --text: #0a0a0a; }
         .wrap {
-          min-height: 100vh;
-          background: #fff;
-          color: var(--text);
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          padding: 18px;
+          min-height: 100vh; background: #fff; color: var(--text);
+          display: flex; flex-direction: column; justify-content: center; padding: 18px;
         }
-
-        /* Top Layout */
         .top {
-          display: grid;
-          grid-template-columns: 1fr auto 1fr;
-          align-items: center;
-          gap: 20px;
-          max-width: 1200px;
-          width: 100%;
-          margin: 0 auto 24px;
+          max-width: 1200px; width: 100%; margin: 0 auto 24px;
+          display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px;
         }
+        .left, .right { display: grid; gap: 12px; }
+        .right { justify-items: end; }
+        .row { display: flex; align-items: center; gap: 10px; font-size: 18px; }
+        .logo img { height: 180px; width: auto; display: block; }
 
-        /* Logo */
-        .logo img {
-          height: 180px;
-          width: auto;
-          display: block;
-          transition: transform 0.25s ease-in-out;
+        /* icon grid: uniform size, spacing */
+        .icon-grid {
+          display: grid; grid-template-columns: repeat(2, 40px); grid-auto-rows: 40px;
+          gap: 14px; justify-items: center; align-items: center;
         }
-        .logo img:hover {
-          transform: scale(1.05);
-        }
+        .icon { line-height: 0; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.12)); }
+        .icon svg { border-radius: 50%; transition: transform .2s ease, filter .2s ease; }
+        .icon:hover svg { transform: scale(1.08); filter: drop-shadow(0 6px 14px rgba(0,0,0,0.18)); }
 
-        /* Left + Right */
-        .left,
-        .right {
-          display: grid;
-          gap: 12px;
-        }
-        .right {
-          justify-items: end;
-        }
-        .row {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          font-size: 18px;
-        }
+        .hero { text-align: center; margin-top: 28px; }
+        .hero h1 { margin: 0; letter-spacing: 0.04em; font-size: clamp(36px, 8vw, 92px); font-weight: 800; }
+        .hero h1 .light { font-weight: 400; }
+        .tag { margin-top: 12px; font-size: clamp(14px, 2.6vw, 28px); letter-spacing: 0.25em; }
+        .site { margin-top: 16px; font-size: clamp(16px, 2.4vw, 24px); font-weight: 500; }
 
-        /* Icons */
-        .socials a,
-        .contact a {
-          text-decoration: none;
-          line-height: 0;
-        }
-        .socials svg,
-        .contact svg {
-          width: 36px;
-          height: 36px;
-          border-radius: 50%;
-          cursor: pointer;
-          transition: transform 0.25s ease-in-out,
-            box-shadow 0.25s ease-in-out;
-          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        }
-        .socials svg:hover,
-        .contact svg:hover {
-          transform: scale(1.15);
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        /* Phone */
-        .phone {
-          font-size: 18px;
-          font-weight: 600;
-          color: #000;
-          margin-left: 6px;
-        }
-
-        /* Hero */
-        .hero {
-          text-align: center;
-          margin-top: 24px;
-        }
-        .hero h1 {
-          margin: 0;
-          letter-spacing: 0.04em;
-          font-size: clamp(36px, 8vw, 92px);
-          font-weight: 800;
-        }
-        .hero h1 .light {
-          font-weight: 400;
-        }
-        .tag {
-          margin-top: 12px;
-          font-size: clamp(14px, 2.6vw, 28px);
-          letter-spacing: 0.25em;
-          color: var(--text);
-        }
-        .site {
-          margin-top: 16px;
-          font-size: clamp(16px, 2.4vw, 24px);
-          color: var(--text);
-          font-weight: 500;
-        }
-
-        /* Responsive */
         @media (max-width: 900px) {
-          .top {
-            grid-template-columns: 1fr;
-            justify-items: center;
-            text-align: center;
-          }
-          .right {
-            justify-items: center;
-          }
-          .logo img {
-            height: 140px;
-          }
+          .top { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+          .right { justify-items: center; }
+          .logo img { height: 140px; }
         }
       `}</style>
     </div>

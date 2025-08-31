@@ -112,7 +112,7 @@ export default function Home() {
               </svg>
             </a>
 
-            <span className="phone">7780829966</span>
+            <span className="phone"></span>
           </div>
         </div>
       </header>
